@@ -6,9 +6,7 @@ include 'includes/db.php';
 include 'includes/userTable.php';
 include 'includes/transactionTable.php';
 
-
 //gemaakt door Roan
-
 
 //Controleer of post is geset
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omanido</title>
-    <!-- Voeg Tailwind CSS toe via CDN -->
+    <!-- Voeg Tailwind CSS toe via CDN -r -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -69,8 +67,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="register.php" class="block text-center text-sm text-blue-600 hover:underline mt-4">Nog geen account? Registreer hier</a>
     </div>
 
-    <!-- debugbar weg halen -->
+    <!-- debugbar weg halen -r -->
 
+    <!-- @copyright Roan Beens 2026 -->
     
 </body>
 </html>

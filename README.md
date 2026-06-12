@@ -1,19 +1,94 @@
 # Educatieve Webapplicatie voor Webbeveiliging
 
-Deze repository bevat de broncode voor een educatieve webapplicatie die is ontworpen om studenten te leren over webbeveiligingskwetsbaarheden en beste praktijken voor veilig programmeren. De applicatie simuleert een bankwebsite met verschillende opzettelijke beveiligingsfouten, wat een praktische leerervaring biedt voor onderwerpen zoals SQL-injectie, cross-site scripting (XSS), datavalidatie, cryptografie, gebroken toegangscontrole en meer. Studenten zullen deze kwetsbaarheden onderzoeken, misbruiken en beveiligen als onderdeel van hun cursuswerk.
+## Bewerkt door Roan Beens
 
+Deze repository bevat de broncode van een educatieve webapplicatie die is ontworpen om studenten kennis te laten maken met webbeveiliging en veilige programmeertechnieken.
 
-## Installatie van Docker:
+De applicatie simuleert een bankwebsite van Omanido en bevat verschillende opzettelijk ingebouwde beveiligingskwetsbaarheden. Studenten onderzoeken deze kwetsbaarheden, analyseren de risico's en passen verbeteringen toe om de applicatie veiliger te maken.
 
-1. Zorg ervoor dat Docker is geïnstalleerd op je systeem.
-2. Download of clone de Applicatie vanuit GitHub.
-3. Navigeer naar de Projectmap:
-4. Open een terminal of command prompt.
-5. Navigeer naar de map waar je de applicatie hebt opgeslagen (bijvoorbeeld `cd pad_naar_project`).
-6. Start Docker Compose:
-7. Voer het commando `docker-compose up` uit. Dit bouwt en start de containers die zijn gedefinieerd in je `docker-compose.yml` bestand.
+Onderwerpen die binnen dit project aan bod komen zijn:
 
-## Toegang tot de Applicatie:
+* SQL-injectie
+* Cross-Site Scripting (XSS)
+* Datavalidatie
+* Cryptografie
+* Gebroken toegangscontrole
+* Authenticatie en autorisatie
+* Secure Coding Practices
 
-1. Open een webbrowser en ga naar [http://localhost:8000](http://localhost:8000) om de applicatie te bekijken.
-2. Om phpMyAdmin te gebruiken, ga naar [http://localhost:8080](http://localhost:8080).
+Het doel van deze applicatie is om praktijkervaring op te doen met het herkennen, testen en oplossen van beveiligingsproblemen binnen webapplicaties.
+
+---
+
+## Installatie met Docker
+
+### Vereisten
+
+Zorg ervoor dat Docker Desktop is geïnstalleerd op je systeem.
+
+### Repository downloaden
+
+Clone of download de repository:
+
+```bash
+git clone <repository-url>
+```
+
+Ga vervolgens naar de projectmap:
+
+```bash
+cd secureprogramminglessons
+```
+
+### Docker Compose starten
+
+Start de applicatie met:
+
+```bash
+docker compose up
+```
+
+of:
+
+```bash
+docker-compose up
+```
+
+Docker zal automatisch de benodigde containers bouwen en starten.
+
+---
+
+## Toegang tot de applicatie
+
+Open de website via:
+
+```text
+http://localhost:8000
+```
+
+Voor phpMyAdmin:
+
+```text
+http://localhost:8080
+```
+
+---
+
+## Leerdoelen
+
+Tijdens dit project leren studenten:
+
+* Veelvoorkomende kwetsbaarheden herkennen
+* Beveiligingsproblemen analyseren
+* Veilige code schrijven
+* Werken volgens OWASP-richtlijnen
+* Samenwerken met GitHub en versiebeheer
+* Beveiligingsoplossingen presenteren en onderbouwen
+
+---
+
+## Auteur
+
+Roan Beens
+
+Secure Programming Project – Software Development
