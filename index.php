@@ -12,13 +12,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // kwetsbaar voor SQL injectie
-    $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
-    $result = $pdo->query($sql);
-    $user = $result->fetch();
+    // aangepaste versie
+    $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ? AND password = ?");
+    $stmt->execute([$username, $password]);
+    $user = $stmt->fetch();
 
     // Controleer of er een rij is gevonden
-    if($result->rowCount() > 0) {
+    if($user) {
         // Gebruiker is ingelogd
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
