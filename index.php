@@ -6,6 +6,10 @@ include 'includes/db.php';
 include 'includes/userTable.php';
 include 'includes/transactionTable.php';
 
+
+//gemaakt door Roan
+
+
 //Controleer of post is geset
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Gebruikersnaam en wachtwoord uit post halen
@@ -64,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <a href="register.php" class="block text-center text-sm text-blue-600 hover:underline mt-4">Nog geen account? Registreer hier</a>
     </div>
-    
+
     <!-- debugbar weg halen -->
 
     
