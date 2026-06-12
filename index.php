@@ -64,7 +64,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <a href="register.php" class="block text-center text-sm text-blue-600 hover:underline mt-4">Nog geen account? Registreer hier</a>
     </div>
-
+    
+    <!-- debugbar weg halen -->
 
     
 </body>
