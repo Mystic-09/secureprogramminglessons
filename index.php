@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
+<!-- klaar -->
 <!DOCTYPE html>
 <html lang="nl">
 <head>
