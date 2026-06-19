@@ -16,6 +16,8 @@ if (!isset($_SESSION['user']['id'])) {
     exit;
 }
 
+//klaar
+
 // Gebruikersgegevens ophalen
 $stmt = $pdo->prepare("SELECT * FROM user WHERE id = ?");
 $stmt->execute([$id]);
