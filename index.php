@@ -15,9 +15,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // aangepaste versie
-    $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ? AND password = ?");
-    $stmt->execute([$username, $password]);
+    $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ?");
+    $stmt->execute([$username]);
+
     $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['user'] = $user;
+
+        header("location: dashboard.php");
+        exit;
+
+    } else {
+        $error = "Gebruikersnaam of wachtwoord is onjuist";
+    }
 
     // Controleer of er een rij is gevonden
     if($user) {
