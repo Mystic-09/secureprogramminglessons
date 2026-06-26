@@ -7,6 +7,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
     exit;
 }
 
+// Alleen beheerders mogen deze pagina bekijken
+if (!isset($_SESSION['user']['isAdmin']) || $_SESSION['user']['isAdmin'] != 1) {
+    header("location: dashboard.php");
+    exit;
+}
+
 // show users
 
 $stmt = $pdo->prepare("SELECT * FROM user");
@@ -40,7 +46,7 @@ $users = $stmt->fetchAll();
         <?php foreach ($users as $user): ?>
             <tr>
                 <td class="border-b p-2"><?= $user['id'] ?></td>
-               <td class="border-b p-2"><a href="transacties.php?id=<?= $user['id'] ?>"><?= $user['username'] ?></a></td>
+                <td class="border-b p-2"><a href="transacties.php?id=<?= htmlspecialchars($user['username']) ?>"><?= htmlspecialchars($user['username']) ?></a></td>
                 <td class="border-b p-2">€<?= number_format($user['balance'], 2, ',', '.') ?></td>
             </tr>
         <?php endforeach; ?>
