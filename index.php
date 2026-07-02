@@ -23,6 +23,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user['password'])) {
 
         $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['user'] = $user;
+
+        header("Location: dashboard.php");
+        exit;
+
+    } else {
+        $error = "Gebruikersnaam of wachtwoord is onjuist";
+    }
+
+    if ($user && password_verify($password, $user['password'])) {
+
+        $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['user'] = $user;
 
