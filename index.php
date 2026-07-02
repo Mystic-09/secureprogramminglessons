@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // aangepaste versie
+    // aangepaste versie verander de query naar tekst zodat er geen sql injecties meer mogelijk zijn
     $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->execute([$username]);
 

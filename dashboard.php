@@ -12,6 +12,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $ontvanger = $_POST['ontvanger'];
     $bedrag = $_POST['bedrag'];
 
+    // Controleer of het bedrag geldig is
+    if (!is_numeric($bedrag)) {
+        $error = "Voer een geldig bedrag in.";
+    } elseif ($bedrag <= 0) {
+        $error = "Het bedrag moet groter zijn dan €0.";
+    } elseif ($bedrag > 1000000) {
+        $error = "Het bedrag is te hoog.";
+    }
+
+    if (!isset($error)) {
+
     // Controleer of de ontvanger bestaat
     $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->execute([$ontvanger]);
@@ -54,6 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     } else {
         $error = "Deze gebruiker bestaat niet";
+    }
     }
 
 }
